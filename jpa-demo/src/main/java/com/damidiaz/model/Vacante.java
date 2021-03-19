@@ -2,8 +2,21 @@ package com.damidiaz.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="Vacantes")
 public class Vacante {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
 	private String descripcion;
@@ -13,6 +26,9 @@ public class Vacante {
 	private String imagen ="no-image.png";
 	private String estatus;
 	private String detalles;
+	//@Transient
+	@OneToOne
+	@JoinColumn(name="idCategoria")
 	private Categoria categoria; 
 	
 	public Categoria getCategoria() {
