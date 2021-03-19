@@ -25,6 +25,10 @@ import com.damidiaz.repository.VacantesRepository;
 @SpringBootApplication
 public class JpaDemoApplication implements CommandLineRunner {
 
+	
+	//prueba git
+	
+	
 	@Autowired
 	private CategoriasRepository repoCategorias;
 	@Autowired
